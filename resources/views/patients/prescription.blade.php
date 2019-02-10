@@ -41,20 +41,8 @@
                 </thead>
                 <tbody>
                 <?php $i=1 ?>
-                @foreach($prescriptions as $prescription)
-                    <tr>
-                        <th> {{$i++}}</th>
-
-                        <td>{{$prescription->description}} </td>
-                        <td>{{$prescription->doctor_id}} </td>
 
 
-                        <td> {{$prescription->created_at}}</td>
-
-                        <td>
-
-                    </tr>
-                @endforeach
                 </tbody>
             </table>
         </div>

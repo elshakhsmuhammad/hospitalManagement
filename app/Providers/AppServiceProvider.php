@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Doctor;
+use App\Patient;
 use App\Staff;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -18,11 +19,11 @@ class AppServiceProvider extends ServiceProvider {
 
 		 Schema::defaultStringLength(120);
 		 Schema::enableForeignKeyConstraints();
-        $doctor = Doctor::all();
+        $doctor =Doctor::all();
         view()->share('doctors',$doctor);
-        $staff = Staff::all();
+        $staff =Staff::all();
         view()->share('staff',$staff);
-        $patient = Doctor::all();
+        $patient =Patient::all();
         view()->share('patients',$patient);
 
 	}

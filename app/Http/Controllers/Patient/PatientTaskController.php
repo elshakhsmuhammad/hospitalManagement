@@ -23,10 +23,10 @@ class PatientTaskController extends Controller
     public function index()
     {
             $patient = patient::find(patient()->user()->id);
-       $examinations =patient::find(patient()->user()->id)->examinations;
+      // $examinations =patient::find(patient()->user()->id)->examinations;
         $prescriptions =patient::find(patient()->user()->id)->prescriptions;
         return view ('patients.prescription', ['title' => trans('admin.prescriptions')
-           ,'examinations'=>$examinations,'prescriptions'=>$prescriptions,'patient'=>$patient]);
+           ,'prescriptions'=>$prescriptions,'patient'=>$patient]);
 
 
 }
