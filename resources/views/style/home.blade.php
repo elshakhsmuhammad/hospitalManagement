@@ -77,7 +77,7 @@
                     <div class="text list_1_of_2">
                           <h3>{{trans('admin.patients')}}</h3>
                           <p>Register & Book Appointment</p>
-                          <div class="button"><span><a href="hms/user-login.php">Click Here</a></span></div>
+                          <div class="button"><span><a href="{{url('patient/patient')}}">Click Here</a></span></div>
                     </div>
                 </div>  
 
@@ -88,7 +88,7 @@
                     <div class="text list_1_of_2">
                           <h3>Doctors Login</h3>
                         
-                          <div class="button"><span><a href="hms/doctor/">Click Here</a></span></div>
+                          <div class="button"><span><a href="{{url('doctor/doctor')}}">Click Here</a></span></div>
                     </div>
                 </div>
 
@@ -149,7 +149,7 @@
                     <div class="text list_1_of_2">
                           <h3>{{trans('admin.doctors')}}</h3>
                         
-                          <div class="button"><span><a href="{{url('/doctor/login')}}">Click Here</a></span></div>
+                          <div class="button"><span><a href="{{url('/doctor/doctor')}}">Click Here</a></span></div>
                     </div>
                 </div>
 

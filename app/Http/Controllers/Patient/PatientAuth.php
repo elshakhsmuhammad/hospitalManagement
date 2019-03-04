@@ -19,10 +19,10 @@ class PatientAuth extends Controller {
     public function dologin() {
         $rememberme = request('rememberme') == 1?true:false;
         if (patient()->attempt(['email' => request('email'), 'password' => request('password')], $rememberme)) {
-            return view('patients.home');
+            return redirect(url('patient/patient'));
         } else {
             session()->flash('error', trans('patient.inccorrect_information_login'));
-            return redirect(url('patient.login'));
+            return redirect(url('patient/login'));
         }
     }
 

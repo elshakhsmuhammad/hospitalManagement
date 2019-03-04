@@ -87,7 +87,7 @@
                         <input type = "hidden" name = "name" value = "{{patient()->user()->name}}">
                         <input type = "hidden" name = "email" value = "{{patient()->user()->email}}">
                         <input type = "hidden" name = "phone" value = "{{patient()->user()->phone}}">
-                        <input type = "hidden" name = "specialized" value = "{{patient()->user()->specialized}}">
+                        <input type = "hidden" name = "description" value = "{{patient()->user()->description}}">
                         <div class="form-group">
                             {!! Form::label('image',trans('admin.icon')) !!}
                             {!! Form::file('image',['class'=>'form-control']) !!}

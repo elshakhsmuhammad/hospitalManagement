@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Patient;
-use App\Doctor;
+//use App\Doctor;
 
 use  App\Http\Controllers\Admin;
+use  App\Http\Controllers\Doctor;
 use App\Http\Controllers\Controller;
 use App\DataTables\ExaminationsDatatable;
 use App\Prescription;
@@ -22,14 +23,15 @@ class PatientTaskController extends Controller
      */
     public function index()
     {
-            $patient = patient::find(patient()->user()->id);
-      // $examinations =patient::find(patient()->user()->id)->examinations;
+         $patient = patient::find(patient()->user()->id);
         $prescriptions =patient::find(patient()->user()->id)->prescriptions;
-        return view ('patients.prescription', ['title' => trans('admin.prescriptions')
-           ,'prescriptions'=>$prescriptions,'patient'=>$patient]);
-
-
-}
+        $doctor = DB::table('doctors')
+            ->join('examinations', 'doctors.id', '=', 'examinations.doctor_id')
+            ->select('doctors.*', 'examinations.id', 'examinations.description')
+            ->get();
+        return view('patients.prescription', ['title' => trans('admin.examinations')
+            , 'prescriptions' => $prescriptions, 'doctors' => $doctor,'patient'=>$patient]);
+    }
 
     /**
      * Show the form for creating a new resource.
